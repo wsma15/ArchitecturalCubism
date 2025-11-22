@@ -1,9 +1,9 @@
-:root {
+﻿:root {
   --bg: #f7fafc;
   --surface: #ffffff;
   --muted: #6b7280;
   --text: #0f172a;
-  --accent: #d4a013;
+    --accent-alt: #128c7e;
   --accent-soft: #f5e5b8;
   --border: #e5e7eb;
   --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
@@ -29,6 +29,44 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 h1, h2, h3, h4 { color: var(--text); line-height: 1.3; }
 p { color: var(--muted); }
 a { color: inherit; text-decoration: none; }
+
+.preload { overflow: hidden; }
+.splash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(212, 160, 19, 0.15), rgba(15, 23, 42, 0.78));
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+.splash .logo-wrap {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+}
+.splash img { width: 110px; height: 110px; object-fit: cover; border-radius: 18px; border: 2px solid rgba(255,255,255,0.6); }
+.splash p { color: #e5e7eb; font-weight: 700; letter-spacing: 0.5px; }
+.splash .door {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(15,23,42,0.9));
+  transform-origin: center;
+  z-index: 1;
+}
+.splash .door.top { clip-path: inset(0 0 50% 0); }
+.splash .door.bottom { clip-path: inset(50% 0 0 0); }
+.loaded .splash .door.top { animation: door-open-top 1s ease-in-out forwards 0.4s; }
+.loaded .splash .door.bottom { animation: door-open-bottom 1s ease-in-out forwards 0.4s; }
+.loaded .splash { animation: splash-fade 0.45s ease 1.2s forwards; pointer-events: none; }
+
+@keyframes door-open-top { to { transform: translateY(-100%); } }
+@keyframes door-open-bottom { to { transform: translateY(100%); } }
+@keyframes splash-fade { to { opacity: 0; visibility: hidden; } }
 
 .hero > .top-nav,
 .hero > .hero-content,
@@ -109,7 +147,15 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 
+.solid:focus-visible,
+.ghost:focus-visible,
+.whatsapp-button:focus-visible {
+  outline: 2px solid var(--accent-alt);
+  outline-offset: 3px;
+}
+
 .solid:hover, .ghost:hover { transform: translateY(-1px); }
+.solid:active, .ghost:active { transform: translateY(0); }
 
 .pill-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .pill-list span {
@@ -268,7 +314,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 14px;
   font-weight: 800;
   color: #fff;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  background: linear-gradient(135deg, #25d366, var(--accent-alt));
   border: 1px solid rgba(18, 140, 126, 0.3);
   box-shadow: 0 12px 28px rgba(18, 140, 126, 0.28);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -311,4 +357,6 @@ a { color: inherit; text-decoration: none; }
   .hero-content { grid-template-columns: 1fr; }
   .cta-content { grid-template-columns: 1fr; }
   .contact-card { text-align: center; }
+  .card, .stat-bar { box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08); }
 }
+
