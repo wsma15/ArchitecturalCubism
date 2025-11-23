@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | التكعيب المعماري</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page preload">
+  <div class="splash">
+    <div class="door top"></div>
+    <div class="door bottom"></div>
+    <div class="logo-wrap">
+      <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري">
+      <p>جارٍ فتح شاشة الاتصال...</p>
+    </div>
+  </div>
+
+  <header class="page-hero contact-hero">
+    <nav class="top-nav page-nav">
+      <div class="brand">
+        <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري">
+        <div>
+          <p class="brand-label">التكعيب المعماري</p>
+          <span class="tagline">شريك توريد مواد البناء والحديد والأخشاب والتجهيزات</span>
+        </div>
+      </div>
+      <div class="nav-actions nav-links">
+        <a class="ghost" href="index.html">الرئيسية</a>
+        <a class="ghost" href="products.html">منتجاتنا</a>
+        <a class="solid active-link" href="contact.html">اتصل بنا</a>
+      </div>
+    </nav>
+
+    <div class="page-hero-content contact-hero-content">
+      <div class="copy">
+        <p class="eyebrow">اتصل بنا</p>
+        <h1>بيانات التواصل المباشر</h1>
+        <p class="lede">تواصل مع فريق التكعيب المعماري عبر الهاتف أو البريد لنجهز عرض السعر ومواعيد التوريد فوراً.</p>
+        <div class="pill-list">
+          <span>توريد مباشر</span>
+          <span>بدائل جاهزة</span>
+          <span>التزام بالمواعيد</span>
+        </div>
+      </div>
+      <div class="contact-card contact-info">
+        <div class="contact-line emphasize">
+          <span class="label">هاتف:</span>
+          <a class="contact-value" href="tel:+966597997527">+966 59 799 7527</a>
+        </div>
+        <div class="contact-line emphasize">
+          <span class="label">بريد:</span>
+          <a class="contact-value" href="mailto:info@tak3eeb.com">info@tak3eeb.com</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <section class="section contact-section">
+      <div class="contact-panel">
+        <div class="contact-row">
+          <div class="contact-pill primary">
+            <span class="label">هاتف</span>
+            <a class="contact-value" href="tel:+966597997527">+966 59 799 7527</a>
+          </div>
+          <div class="contact-pill">
+            <span class="label">بريد</span>
+            <a class="contact-value" href="mailto:info@tak3eeb.com">info@tak3eeb.com</a>
+          </div>
+        </div>
+        <p class="contact-lede">اختر الطريقة الأنسب لك: اتصال مباشر أو رسالة بريدية، وسنرد بتأكيد العرض والمواعيد.</p>
+        <div class="contact-actions">
+          <a class="solid wide" href="tel:+966597997527">اتصل الآن</a>
+          <a class="ghost wide" href="mailto:info@tak3eeb.com">أرسل بريدًا الآن</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري" />
+      <div>
+        <p class="brand-label">التكعيب المعماري</p>
+        <p class="tagline">شريك توريد مواد البناء والحديد والأخشاب والتجهيزات</p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">منتجاتنا</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+      <p class="footer-rights">جميع الحقوق محفوظة 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+      setTimeout(() => {
+        document.body.classList.remove("preload");
+        const splash = document.querySelector(".splash");
+        if (splash) splash.remove();
+      }, 1600);
+    });
+  </script>
+</body>
+</html>

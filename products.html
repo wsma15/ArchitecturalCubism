@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منتجاتنا | المواد والأخشاب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="products-page preload">
+  <div class="splash">
+    <div class="door top"></div>
+    <div class="door bottom"></div>
+    <div class="logo-wrap">
+      <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري">
+      <p>جارٍ تجهيز المنتجات...</p>
+    </div>
+  </div>
+
+  <header class="page-hero">
+    <nav class="top-nav page-nav">
+      <div class="brand">
+        <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري">
+        <div>
+          <p class="brand-label">التكعيب المعماري</p>
+          <span class="tagline">حلول مواد وتشطيبات جاهزة للتنفيذ في السعودية</span>
+        </div>
+      </div>
+      <div class="nav-actions nav-links">
+        <a class="ghost" href="index.html">الرئيسية</a>
+        <a class="ghost active-link" href="products.html">منتجاتنا</a>
+        <a class="solid" href="contact.html">تواصل معنا</a>
+      </div>
+    </nav>
+
+    <div class="page-hero-content">
+      <div class="copy">
+        <p class="eyebrow">منتجاتنا</p>
+        <h1>نبذة عن المنتجات التي لدينا</h1>
+        <p class="lede">هذه قائمة مختصرة من التشكيلة المتوفرة لدينا. يمكنك تصفح الأخشاب الطبيعية والصناعية، الحديد، مواد البناء والعزل، التجهيزات، والعدد اليدوية مع إمكانية توريد نطاق أوسع عند الطلب.</p>
+        <div class="filter-stack">
+          <div class="filter-bar">
+            <div class="chip-group" id="quickChips">
+              <button class="chip active" data-category="all" type="button">الكل</button>
+              <button class="chip" data-category="natural" type="button">أخشاب طبيعية</button>
+              <button class="chip" data-category="engineered" type="button">منتجات أخشاب صناعية</button>
+              <button class="chip" data-category="rebar" type="button">حديد تسليح</button>
+              <button class="chip" data-category="building" type="button">مواد بناء</button>
+              <button class="chip" data-category="insulation" type="button">مواد عزل</button>
+              <button class="chip" data-category="fixtures" type="button">ملحقات وتجهيزات البناء</button>
+              <button class="chip" data-category="tools" type="button">أدوات وعدد يدوية</button>
+            </div>
+          </div>
+          <div class="filter-meta">
+            <span id="selectedLabel">عرض كل المنتجات</span>
+            <span class="dot"></span>
+            <span id="countLabel">0 منتجات</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual product-visual">
+        <div class="visual-card">
+          <p class="eyebrow">جاهزون للتسليم</p>
+          <h3>مستودعات مبردة وتشطيب محكّم مع فرق تركيب معتمدة</h3>
+          <p>نتابع المخزون يومياً ونؤكد المقاسات قبل التجهيز مع تغليف محكم وتسليم داخل السعودية.</p>
+          <div class="pill-list">
+            <span>قص وتفريز مخصص</span>
+            <span>تغليف وحماية</span>
+            <span>تسليم في نفس اليوم</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog">
+    <section class="section catalog-section">
+      <div class="section-header">
+        <p class="eyebrow">نبذة مختصرة</p>
+        <h2 id="catalogTitle">نبذة عن المنتجات التي لدينا</h2>
+        <p class="lede">هذه الصفحة تلخص أبرز الأصناف المتوفرة حالياً. اختر التصنيف للاطلاع على تفاصيل سريعة، مع إمكانية توفير أصناف إضافية عند الطلب.</p>
+      </div>
+      <div class="summary-banner">
+        <span class="pill badge-soft">ملخص</span>
+        <p>القائمة أدناه تعكس أهم المنتجات، ويمكن التوريد لمواد أخرى بحسب احتياج المشروع داخل السعودية.</p>
+      </div>
+      <div class="grid catalog-grid" id="productsGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assests/Logo.jpeg" alt="شعار التكعيب المعماري" />
+      <div>
+        <p class="brand-label">التكعيب المعماري</p>
+        <p class="tagline">شريك توريد مواد البناء والحديد والأخشاب والتجهيزات</p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">منتجاتنا</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+      <p class="footer-rights">جميع الحقوق محفوظة 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const categoryLabels = {
+      all: "كل المنتجات",
+      natural: "أخشاب طبيعية",
+      engineered: "منتجات أخشاب صناعية",
+      rebar: "حديد تسليح",
+      building: "مواد بناء",
+      insulation: "مواد عزل",
+      fixtures: "ملحقات وتجهيزات البناء",
+      tools: "أدوات وعدد يدوية"
+    };
+
+    const products = [
+      {
+        id: 'natural-1',
+        category: 'natural',
+        title: 'أخشاب طبيعية معالجة',
+        description: 'ألواح خشب طبيعي مجففة بالفرن مع خيارات زان/سدر/بلوط جاهزة للتقطيع والتشطيب.',
+        image: 'assests/أخشاب طبيعية معالجة.jpg',
+        tags: ['درجات ألوان متعددة', 'جاهزة للقص'],
+        badge: 'متوفر'
+      },
+      {
+        id: 'engineered-1',
+        category: 'engineered',
+        title: 'منتجات أخشاب صناعية (MDF/HDF)',
+        description: 'ألواح MDF/HDF مقاومة للرطوبة والحريق، أسطح ناعمة جاهزة للدهان أو التلبيس.',
+        image: 'assests/منتجات اخشاب صناعية.jpg',
+        tags: ['سماكات 8-25 مم', 'استقرار عالي'],
+        badge: 'مفضل'
+      },
+      {
+        id: 'rebar-1',
+        category: 'rebar',
+        title: 'حديد تسليح معتمد',
+        description: 'حديد تسليح بمقاسات مختلفة (8-32 مم) مع شهادات مطابقة وتوريد للموقع.',
+        image: 'assests/حديد تسليح معتمد.jpg',
+        tags: ['مطابق للمواصفات السعودية', 'توريد سريع'],
+        badge: 'جاهز للشحن'
+      },
+      {
+        id: 'building-1',
+        category: 'building',
+        title: 'مواد بناء أساسية',
+        description: 'إسمنت، بلوك، وبلاطات خرسانية بمعايير جودة عالية لتجهيز المواقع بسرعة.',
+        image: 'assests/مواد بناء أساسية.jpg',
+        tags: ['خدمة تحميل للموقع', 'مخزون مستمر'],
+        badge: 'متوفر'
+      },
+      {
+        id: 'insulation-1',
+        category: 'insulation',
+        title: 'مواد عزل حراري وصوتي',
+        description: 'ألواح عزل بولي أيزوسيانورات وصوف صخري مع أغشية عزل للرطوبة والحرارة.',
+        image: 'assests/مواد عزل حراري وصوتي.jpg',
+        tags: ['مقاومة للحريق', 'مناسب للأسقف والجدران'],
+        badge: 'حسب المقاس'
+      },
+      {
+        id: 'fixtures-1',
+        category: 'fixtures',
+        title: 'ملحقات وتجهيزات البناء',
+        description: 'مفصلات، براغي مجلفنة، حوامل، وأقفال أبواب مقاومة حريق لتجهيز مواقع العمل.',
+        image: 'assests/ملحقات وتجهيزات البناء.jpg',
+        tags: ['مقاومة للصدأ', 'خيارات حرارية'],
+        badge: 'حزمة كاملة'
+      },
+      {
+        id: 'tools-1',
+        category: 'tools',
+        title: 'أدوات وعدد يدوية',
+        description: 'مطارق، مفكات، مثاقب، وعدد قياس احترافية لفرق الموقع والصيانة السريعة.',
+        image: 'assests/tools.jpg',
+        tags: ['مقاومة للتآكل', 'خدمة ما بعد البيع'],
+        badge: 'مختارة'
+      }
+    ];
+
+    const grid = document.getElementById('productsGrid');
+    const catalogTitle = document.getElementById('catalogTitle');
+    const selectedLabel = document.getElementById('selectedLabel');
+    const countLabel = document.getElementById('countLabel');
+    const chips = document.getElementById('quickChips');
+
+    function renderProducts(category = 'all') {
+      const filtered = category === 'all' ? products : products.filter(item => item.category === category);
+      grid.innerHTML = filtered.map(item => `
+        <article class="card product-card">
+          <img src="${item.image}" alt="${item.title}" class="product-thumb">
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="pill">${categoryLabels[item.category]}</span>
+              <span class="pill badge-soft">${item.badge}</span>
+            </div>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <ul class="spec-list">
+              ${item.tags.map(tag => `<li>${tag}</li>`).join('')}
+            </ul>
+          </div>
+        </article>
+      `).join('');
+
+      const label = categoryLabels[category] || categoryLabels.all;
+      catalogTitle.textContent = label;
+      selectedLabel.textContent = 'عرض ' + label;
+      countLabel.textContent = filtered.length === 1 ? 'منتج واحد' : filtered.length + ' منتجات';
+    }
+
+    function setActiveCategory(category) {
+      document.querySelectorAll('[data-category]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === category);
+      });
+      renderProducts(category);
+    }
+
+    chips.addEventListener('click', (event) => {
+      const target = event.target.closest('[data-category]');
+      if (!target) return;
+      setActiveCategory(target.dataset.category);
+    });
+
+    renderProducts();
+
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+      setTimeout(() => {
+        document.body.classList.remove('preload');
+        const splash = document.querySelector('.splash');
+        if (splash) splash.remove();
+      }, 1600);
+    });
+  </script>
+</body>
+</html>
